@@ -1,0 +1,341 @@
+STRING="\ACR?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\ac{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\ac{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\ac{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\ac[?]{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\ac[?]{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\ac[?]{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Ac{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Ac{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Ac{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Ac[?]{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Ac[?]{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Ac[?]{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\acp?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\acp?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\acp?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Acp?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Acp?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Acp?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\acf?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\acf?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\acf?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Acf?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Acf?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Acf?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\acs?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\acs?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\acs?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Acs?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Acs?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Acs?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\acl?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\acl?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\acl?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\Acl?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"
+
+STRING="\Acl?{?}"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[GDIShow;GDISetPage('Glos','%?');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "CharLeft;GDIShow;GDISetPage('Glos','%?');]"
+
+STRING="\Acl?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\useglosentry?{}"
+  ENABLED=1
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Exe('%b\Macros\Active Strings\Gls.edt');]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgEnd.edt');"+
+                   "Exe('%b\Macros\Active Strings\Gls.edt');]"

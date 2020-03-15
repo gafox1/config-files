@@ -1,0 +1,4 @@
+MODE=":EDT|*.edt"
+MODE=":RNW|*.rnw;*.snw"
+MODE=":RHTML|*.rhtml"
+MODE=":DTX|*.dtx;*.fdd"

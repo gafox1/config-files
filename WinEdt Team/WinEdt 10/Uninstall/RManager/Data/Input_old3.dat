@@ -1,0 +1,4 @@
+  DIRECTIVE="\input ?"
+    EXTENSION="*;.tex"
+    PATH="%P;%p;%@('TEXINPUTS');"
+  // Extended Input for bibliography (expands any TeX \PATH specifications!)

@@ -1,0 +1,19 @@
+// PDF Auto Detection Data
+
+  Assign(!"PDFAuto-View", !"0");
+  Assign(!"PDF-View","""C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe""");
+  Assign(!"PDF-ViewDef",!"""C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe""");
+
+
+  Assign(!"PDF-View1",!"""C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.exe""");
+  Release(!"PDF-View2");
+  Release(!"PDF-View3");
+  Release(!"PDF-View4");
+
+  Assign(!"Acro-DDE_Service",!"AcroviewA20");
+
+  Assign(!"PDF-SyncTeX", !"1");
+  Assign(!"PDF-Sync",!"--synctex=-1");
+  Assign(!"PDF-SyncEx",!".synctex");
+
+End;

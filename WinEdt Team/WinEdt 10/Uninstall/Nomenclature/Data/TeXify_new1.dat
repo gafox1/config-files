@@ -1,0 +1,3 @@
+  IfFileExists("%O\%N.glg",!"DeleteFile('%O\%N.glg');");
+  IfFileExists("%O\%N.nlg",!"DeleteFile('%O\%N.nlg');");
+  IfStr("%$('%!9-Clean_Build');","1","=",>

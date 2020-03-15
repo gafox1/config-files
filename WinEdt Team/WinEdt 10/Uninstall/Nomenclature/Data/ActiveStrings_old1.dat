@@ -1,0 +1,16 @@
+STRING="\useGlosentry?{"
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Relax;]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  DBL_CLICK_MACRO="[Exe('%b\Macros\Active Strings\ArgStart.edt');"+
+                   "GDIShow;GDISetPage('Glos');]"
+
+STRING="\("
+  ENABLED=0
+  MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  MACRO="[Ins('\)');CharLeft(2);]"
+  DBL_CLICK_ENABLED=1
+  DBL_CLICK_MODE_FILTER="TeX"
+  DBL_CLICK_MACRO="[MatchDelimiter(1,1,1);]"

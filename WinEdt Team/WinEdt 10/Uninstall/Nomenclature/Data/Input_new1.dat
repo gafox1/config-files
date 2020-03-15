@@ -1,0 +1,8 @@
+  TYPE_FILTER="mpx"
+MAIN_ICON="FileNLG"
+  TYPE_FILTER="nlg"
+MAIN_ICON="FileNLO"
+  TYPE_FILTER="nlo"
+MAIN_ICON="FileNLS"
+  TYPE_FILTER="nls"
+MAIN_ICON="FileSTY"

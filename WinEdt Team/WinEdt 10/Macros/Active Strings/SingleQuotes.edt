@@ -1,0 +1,82 @@
+// -*- ASCII:EDT -*-
+// Smarter LaTeX single Quotes
+
+PushTagsandRegisters;
+
+GetPreamble("\begin{document}",9);
+
+FindInString("%!9","<@{ }%%@{ }SQ:@{ }single-disabled|disabled",-11,-11,11);
+IfOK(!"JMP('Done-Quotes');");
+
+FindInString("%!9","<@{ }%%@{ }SQ:@{ }UNICODE",-11,-11,11);
+IfOK(!"Assign('UNICODE','1');",!"Assign('UNICODE','0');");
+
+FindInString("%!9","<@{ }%%@{ }SQ:@{ }EN-single",-11,-11,11);
+IfOK(!|IfStr("%$('UNICODE');","1","=",>
+     !"Assign('Open-Quotes','‘');Assign('Close-Quotes','’');>
+       JMP('Do-Quotes');",>
+     !*Assign('Open-Quotes','`');Assign('Close-Quotes',`'`);>
+       JMP('Do-Quotes');*);|);
+
+IfisMode("DE","%!M",>
+  !|IfStr("%$('UNICODE');","1","=",>
+     !"Assign('Open-Quotes','‚');Assign('Close-Quotes','‘');>
+       JMP('Do-Quotes');",>
+     !*Assign('Open-Quotes','\glq ');Assign('Close-Quotes',`\grq{}`);>
+       JMP('Do-Quotes');*);|);
+
+IfisMode("FR","%!M",>
+  !|IfStr("%$('UNICODE');","1","=",>
+     !"Assign('Open-Quotes','‹');Assign('Close-Quotes','›');>
+       JMP('Do-Quotes');",>
+     !*Assign('Open-Quotes','\flq ');Assign('Close-Quotes',`\frq{}`);>
+       JMP('Do-Quotes');*);|);
+
+IfisMode("TeX","%!M",>
+  !|IfStr("%$('UNICODE');","1","=",>
+     !"Assign('Open-Quotes','‘');Assign('Close-Quotes','’');>
+       JMP('Do-Quotes');",>
+     !*Assign('Open-Quotes','`');Assign('Close-Quotes',`'`);>
+       JMP('Do-Quotes');*);|);
+
+:Do-Quotes:: ========================================================
+GetLength(4,"%$('Open-Quotes');");
+GetLength(5,"%$('Close-Quotes');");
+Backspace;
+Mark(0);
+IfNum('%c',1,'=',!|InsText("%$('Open-Quotes');");JMP('Done-Quotes');|);
+IfNum('%c',%!4+1,'>=',!*>
+  SetSel(1);>
+  GotoCol('%c-%!4');>
+  GetSel(0,9);>
+  SetSel(0);>
+  Goto(0);>
+  IfStr('%!9',"%$('Open-Quotes');",'=',>
+    !|Backspace(%!4);InsText(`'`);JMP('Done-Quotes');|);>
+  *);
+IfStr("%$('Close-Quotes');","'",'=',!|JMP('English-Quotes');|);
+IfNum('%c',%!5+1,'>=',!*>
+  SetSel(1);>
+  GotoCol('%c-%!5');>
+  GetSel(0,9);>
+  SetSel(0);>
+  Goto(0);>
+  IfStr('%!9',"%$('Close-Quotes');",'=',>
+    !|Backspace(%!5);InsText(`'`);JMP('Done-Quotes');|);>
+  *);
+:English-Quotes:: ===================================================
+SetSel(1);
+GotoCol('%c-1');
+GetSel(0,9);
+SetSel(0);
+Goto(0);
+IfStr('%!9',' ','=',!|InsText("%$('Open-Quotes');");JMP('Done-Quotes');|);
+InsText("%$('Close-Quotes');");
+
+:Done-Quotes:: ======================================================
+Release('UNICODE');
+Release('Open-Quotes');
+Release('Close-Quotes');
+PopTagsandRegisters;
+
+End;

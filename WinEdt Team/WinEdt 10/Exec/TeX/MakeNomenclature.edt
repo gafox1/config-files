@@ -1,0 +1,30 @@
+// -*- ASCII:EDT -*-
+// TeX: MakeNomenclature ...
+
+  Requires(20110812); // Requires this build of WinEdt to work properly
+
+  PushTagsandRegisters;
+  Assign('ExitCode-OK','0'); // OK Exit Code
+  LetReg(9,'MakeIndex'); // Execution Modes Compiler
+  LetReg(8,'nlg');      // Log File (or empty)
+  LetReg(7,'nls');      // Output Format
+  LetReg(6,'%O');       // Startup Folder
+
+  // nomencl or nomentbl?
+  GetPreamble('\begin{document}',3);
+  FindInString('%!3','<@{ }\\usepackage@{\[**\]}\{@^{\}|%%|nomentbl}nomentbl{,| |\}}',-1,-1,11);
+    IfOK(!"LetReg(3,'nomentbl');",!"LetReg(3,'nomencl');");
+
+  // Display a Dialog for Extra Switches:
+  IfStr("%$('%!9-GUI');","1","=",>
+    !|GetString("Switches: ","%!9 Switches","%$('%!9--Switches');");>
+      IfOK(!`Assign('%!9--Switches','%!?');`,!`PopTagsandRegisters;Exit;`);|,>
+    !|Release('%!9--Switches');|);
+  // Build the Command Line ...
+  LetReg(5, `%$('%!9-Executable'); -s %!3.ist -t "%N.nlg" -o "%N.nls" %$('%!9--Switches'); "%N.nlo"`);
+
+  // Use Execution Modes to determine the flow of execution...
+  Exe('%b\Exec\ExeCompiler.edt');
+  PopTagsandRegisters;
+
+End;

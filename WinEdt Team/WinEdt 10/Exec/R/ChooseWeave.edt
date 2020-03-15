@@ -1,0 +1,36 @@
+// Select Weave Method
+
+  MUIReset('Select Default Weave Method');
+
+  MUISet('','width','270');
+  MUISet('','height','120');
+  MUISet('','position','1');
+  MUISet('','font size','8');
+
+  MUIAdd(178,0,0,100,'Panel','TPanel');
+    MUIAdd(0,25,0,0,'OK','TButton','Panel','&OK');
+      MUISet('OK','default','1');
+      MUISet('OK','on click',!'MUIHide(1);');
+    MUIAdd(0,58,0,0,'Cancel','TButton','Panel','&Cancel');
+      MUISet('Cancel','cancel','1');
+      MUISet('Cancel','on click',!'MUIHide(2);');
+  MUIAdd(5,5,160,80,'Weave','TRadioGroup','','Weave Method');
+    MUIAdd(8,23,0,0,'Knitr','TRadioButton','Weave','&Knitr');
+    MUIAdd(8,50,0,0,'Sweave','TRadioButton','Weave','&Sweave');
+      MUISet('Knitr','checked','1');
+
+  MUILoad("%b\Exec\R\Weave.mui");
+
+  MUIShow;
+  IfOK(!'Relax;',!'Exit;');
+
+  MUIGetVar('Sweave','checked','Weave-Method');
+  IfStr("%$('Weave-Method');","1","=",>
+    !"CopyFile('%b\Exec\R\SweavePDFTeXify.edt',>
+               '%b\Exec\R\Compile.edt',1,1);",>
+    !"CopyFile('%b\Exec\R\KnitrPDFTeXify.edt',>
+               '%b\Exec\R\Compile.edt',1,1);");
+
+  MUISave("%b\Exec\R\Weave.mui");
+
+End;

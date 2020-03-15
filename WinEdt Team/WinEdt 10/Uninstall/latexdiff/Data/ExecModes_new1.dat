@@ -1,0 +1,24 @@
+                 $$0001011111111,// Enable Flags (13)<>
+                 $$1111);        // Enable Pause..WinEdt Console Flags (4)
+
+  AddApplication(!'latexdiff',   // Name<>
+                 !'latexdiff.exe',// Executable<>
+                 !'',            // Switches<>
+                 !'"%n%t"',      // Parameters<>
+                 !'',            // Environmental Variable <-- Executable<>
+                 0,              // Paper Size Switch Enabled<>
+                 0,              // Landscape Switch Enabled<>
+                 $$0001001000111,// Enable Flags (13)<>
+                 $$1111);        // Enable Pause..WinEdt Console Flags (4)
+
+  AddApplication(!'latexrevise', // Name<>
+                 !'latexrevise.exe',// Executable<>
+                 !'',            // Switches<>
+                 !'"%n%t"',      // Parameters<>
+                 !'',            // Environmental Variable <-- Executable<>
+                 0,              // Paper Size Switch Enabled<>
+                 0,              // Landscape Switch Enabled<>
+                 $$0001001000111,// Enable Flags (13)<>
+                 $$1111);        // Enable Pause..WinEdt Console Flags (4)
+
+  AddApplication(!'NSIS',        // Name<>

@@ -1,0 +1,19 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Gordon Fox
+	email = gfox@unm.edu
+[core]
+	autocrlf = true
+	excludesfile = C:\\Users\\gafox\\Documents\\gitignore_global.txt
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[gui]
+	recentrepo = C:/Users/gafox/Projects/HetSynthesis
+	recentrepo = C:/Users/gafox/Projects/eeb2017-git

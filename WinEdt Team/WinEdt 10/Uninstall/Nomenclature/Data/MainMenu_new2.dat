@@ -1,0 +1,8 @@
+    REQ_FILTER=:"%!M=TeX"*%O\%N.gls
+  ITEM="$Erase_NLS_File"
+    CAPTION="Erase NLS File"
+    IMAGE="FileNLS"
+    MACRO="IfFileExists('%O\%N.nls',!'CloseFile(|%O\%N.nls|,1);"+
+          "DeleteFile(|%O\%N.nls|);UpdateStatus;');"
+    REQ_FILTER=:"%!M=TeX"*%O\%N.nls
+  ITEM="$Erase_LOF_File"

@@ -1,0 +1,2 @@
+  IfStr('%!7',!'chm',!'=',!'JMP(!"CHM_Preview");');
+  Prompt('No Viewer for ".%!7" files is currently defined!');

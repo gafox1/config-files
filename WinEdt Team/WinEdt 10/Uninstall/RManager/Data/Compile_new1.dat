@@ -1,0 +1,7 @@
+// Mode-Sensitive Compile
+
+// @BEGIN: RNW
+IfisMode("RNW","%!M",!"Exe('%b\Exec\R\Compile.edt');Exit;");
+// @END: RNW
+
+// @BEGIN: TeX

@@ -1,0 +1,3 @@
+    MENU="$Erase_GLS_File"
+    MENU="$Erase_NLS_File"
+    MENU="-"

@@ -1,0 +1,24 @@
+    Exe('%b\Exec\TeX\MakeGlossary.edt');
+
+:MakeNomenclature:: =================================================
+
+  SetOK(1);  // Just in case ...
+  SetErrorFlag(0);
+
+IfFileExists('%O\%N.nlo',!'Relax;',!'JMP("Cleanup");');
+
+    Assign(!"Compile-Flag",!|2|); // Do not Complain ...
+    Assign("MakeIndex-GUI");
+    Assign("MakeIndex-ExitCode");
+    Assign("MakeIndex-Pause");
+    Assign("MakeIndex-Wait","1");
+    Assign("MakeIndex-High_Priority","%$('%$(`Pre-Process`);-High_Priority');");
+    Assign("MakeIndex-STD_IO","%$('%$(`Pre-Process`);-STD_IO');");
+    Assign("MakeIndex-WinEdt_Console","%$('%$(`Pre-Process`);-WinEdt_Console');");
+    Assign("MakeIndex-Hidden_Window","%$('%$(`Pre-Process`);-Hidden_Window');");
+    Assign("MakeIndex-Background_Window","%$('%$(`Pre-Process`);-Background_Window');");
+    IfStr("%$('MakeIndex-WinEdt_Console');","1","<>",!|Assign("MakeIndex-Hidden_Window","1");|);
+
+    Exe('%b\Exec\TeX\MakeNomenclature.edt');
+
+:Cleanup:: ==========================================================

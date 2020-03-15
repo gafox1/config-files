@@ -1,0 +1,8 @@
+  START1_TRIGGER="\ACRshort"
+  START1_TRIGGER="\acrlong"
+  START1_TRIGGER="\Acrlong"
+  START1_TRIGGER="\ACRlong"
+  START1_TRIGGER="\acrfull"
+  START1_TRIGGER="\Acrfull"
+  START1_TRIGGER="\ACRfull"
+  START1_TRIGGER="\useglosentry"

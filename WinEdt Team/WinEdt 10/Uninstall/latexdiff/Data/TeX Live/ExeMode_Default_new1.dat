@@ -1,0 +1,53 @@
+    Assign(!"HHC-Pause", !|1|);
+
+// latexdiff
+    Assign(!"latexdiff-Executable", !|latexdiff.exe|);
+    Release(!"latexdiff-Switches");
+    Assign(!"latexdiff-Parameters", !|"%n%t"|);
+    Release(!"latexdiff-Paper_Size");
+    Release(!"latexdiff-Paper_Custom_Size");
+    Release(!"latexdiff-Landscape");
+    Release(!"latexdiff-GUI");
+    Release(!"latexdiff-High_Priority");
+    Assign(!"latexdiff-Wait", !|1|);
+    Release(!"latexdiff-Report");
+    Release(!"latexdiff-Errors");
+    Release(!"latexdiff-Warnings");
+    Assign(!"latexdiff-ExitCode", !|1|);
+    Release(!"latexdiff-Viewer");
+    Release(!"latexdiff-View_Search");
+    Release(!"latexdiff-STD_IO");
+    Release(!"latexdiff-No_Interaction");
+    Release(!"latexdiff-C-style-errors");
+    Release(!"latexdiff-Clean_Build");
+    Assign(!"latexdiff-WinEdt_Console", !|1|);
+    Release(!"latexdiff-Hidden_Window");
+    Release(!"latexdiff-Background_Window");
+    Assign(!"latexdiff-Pause", !|1|);
+
+// latexrevise
+    Assign(!"latexrevise-Executable", !|latexrevise.exe|);
+    Release(!"latexrevise-Switches");
+    Assign(!"latexrevise-Parameters", !|"%n%t"|);
+    Release(!"latexrevise-Paper_Size");
+    Release(!"latexrevise-Paper_Custom_Size");
+    Release(!"latexrevise-Landscape");
+    Assign(!"latexrevise-GUI", !|1|);
+    Release(!"latexrevise-High_Priority");
+    Assign(!"latexrevise-Wait", !|1|);
+    Release(!"latexrevise-Report");
+    Release(!"latexrevise-Errors");
+    Release(!"latexrevise-Warnings");
+    Assign(!"latexrevise-ExitCode", !|1|);
+    Release(!"latexrevise-Viewer");
+    Release(!"latexrevise-View_Search");
+    Release(!"latexrevise-STD_IO");
+    Release(!"latexrevise-No_Interaction");
+    Release(!"latexrevise-C-style-errors");
+    Release(!"latexrevise-Clean_Build");
+    Assign(!"latexrevise-WinEdt_Console", !|1|);
+    Release(!"latexrevise-Hidden_Window");
+    Release(!"latexrevise-Background_Window");
+    Assign(!"latexrevise-Pause", !|1|);
+
+// NSIS

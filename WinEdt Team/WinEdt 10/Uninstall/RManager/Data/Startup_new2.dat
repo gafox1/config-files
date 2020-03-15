@@ -1,0 +1,6 @@
+  SetErrorFlag(0);
+
+  DosToUnix("%$('R-Sweave');",3);
+  SetEnvVar(!"TEXINPUTS","%!3;%@('TEXINPUTS');");
+
+  PopTagsandRegisters;

@@ -1,0 +1,15 @@
+  ITEM="Make_Glossary"
+    CAPTION="Make &Glossary"
+    IMAGE="Glossary"
+    MACRO="Exe('%b\Exec\TeX\MakeGlossary.edt');"
+    SHORTCUT="24647::Shift+Ctrl+G"
+    REQ_FILTER=`%O\%N.glo?%$('File-glo');?%O\%N.acr*"%!M=TeX"`+
+               `|"%!M=TeX:INS"|"%!M=TeX:DTX"|"%!M=TeX:STY"|"%!M=TeX:AUX"`
+  ITEM="Make_Nomenclature"
+    CAPTION="Make &Nomenclature"
+    IMAGE="Nomenclature"
+    MACRO="Exe('%b\Exec\TeX\MakeNomenclature.edt');"
+    SHORTCUT="24654::Shift+Ctrl+N"
+    REQ_FILTER=`%O\%N.nlo*"%!M=TeX"`+
+               `|"%!M=TeX:INS"|"%!M=TeX:DTX"|"%!M=TeX:STY"|"%!M=TeX:AUX"`
+  ITEM="-"

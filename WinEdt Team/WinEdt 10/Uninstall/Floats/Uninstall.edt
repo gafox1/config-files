@@ -1,0 +1,130 @@
+// -*- ASCII:EDT -*-
+
+    Prompt("This macro will uninstall Floats package...%\>
+It is recommended that you close all files (or project) to make it faster.%\%\>
+                            Continue?",1,0);
+
+    Assign("Package","Floats");
+
+    PushTagsandRegisters;
+
+    StartWorking('Uninstalling...');
+    ProcessMessages;
+
+    ShowConsole(1,1);
+    ResetConsole;
+    SetConsoleText("Uninstalling...%\%\",1);
+    Call('Uninstall_Start');
+    Call('Uninstall_Task');
+    SetConsoleText("%\Done...%\",1,1);
+
+    PopTagsandRegisters;
+
+    StopWorking;
+
+    Prompt("Uninstallation Complete! See the Console for uninstall info.",0,1);
+
+    Release("Filename");
+    Release("Filetype");
+    Release("Folder");
+    Release("Package");
+
+Exit;
+
+:Uninstall_Start:: ==================================================
+
+    // Delete files
+    Assign("Filetype",".edt");
+
+      Assign("Folder","Macros\Gather");
+      Assign("Filename","Listing");
+      Call('File_Delete');
+      Assign("Filename","ListingLabel");
+      Call('File_Delete');
+
+    // Update config files
+    Assign("Filetype",".ini");
+
+      Assign("Folder","ConfigEx");
+      Assign("Filename","Gather");
+      Call('File_Update');
+      Assign("Filename","Tree");
+      Call('File_Update');
+
+    // Reload personal settings
+    IfFileExists("%b\ConfigEx\UserPreferences.ini",!'LoadConfig("%b\ConfigEx\UserPreferences.ini");');
+    IfFileExists("%b\ConfigEx\Private.ini",!'LoadConfig("%b\ConfigEx\Private.ini");');
+
+Return;
+
+:File_Delete:: ======================================================
+
+    IfFileExists('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);',!'Relax;',>
+      !'SetConsoleText("WARNING: >
+File %$(|Filename|);%$(|Filetype|); not found in %$(|Folder|);.%\",1,1);Return;');
+    DeleteFile('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);');
+    IfOK(!'SetConsoleText("OK:      >
+File %$(|Filename|);%$(|Filetype|); deleted from %$(|Folder|);.%\",1,1);',>
+         !'SetConsoleText("ERROR:   >
+File %$(|Filename|);%$(|Filetype|); not deleted from %$(|Folder|);!!!%\",1,1);');
+
+Return;
+
+:File_Update:: ======================================================
+
+    IfFileExists('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);',!'Relax;',>
+      !'SetConsoleText("WARNING: >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not found.%\",1,1);Return;');
+    ReadFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);",0);
+    LetRegNum(7,1);
+    Loop(!`>
+      IfFileExists('%C\Data\%$(|Filename|);_new%!7.dat',>
+        !|Call('Update_Substitute');LetRegNum(7,%!7+1);|,>
+        !|Stop;|);`);
+    WriteFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);","%!0");
+    IfStr('%$(|Filetype|);','.ini','=',>
+      !'LoadConfig("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);");');
+
+Return;
+
+:Update_Substitute:: ================================================
+
+    ReadFile("%C\Data\%$(|Filename|);_old%!7.dat",1);
+    ReadFile("%C\Data\%$(|Filename|);_new%!7.dat",2);
+    SubstituteInString("%!0","%!2","%!1");
+    IfOK(!'SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); successfully restored.%\",1,1);',>
+         !'FindInString("%!0","%!1",-1,-1,10);>
+           IfOK(!`SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not modified (already OK).%\",1,1);`,>
+                !`SetConsoleText("ERROR:   >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not restored!!!%\",1,1);`);');
+
+Return;
+
+:Uninstall_Task:: ===================================================
+
+    CloseFile("%X");
+
+    // Delete uninstall files
+    ListFolderFiles(0,"%b\Uninstall\%$(|Package|);","",1,1);
+    LstEnum("%!0","%\");
+    LstGetCount(1);
+    Repeat(%!1,>
+      !`LstGetItem(2,%!c-1);>
+        DeleteFile("%b\Uninstall\%$(|Package|);\%!2");>
+        ProcessMessages;>
+       `);
+    LstRelease;
+
+    // Extra Task
+    SetFolder("%b");
+    Exe('%b\Config\Cleanup.edt');
+    RemoveDirectory("%b\ConfigEx");
+    RemoveDirectory("%b\Macros\Gather");
+    RemoveDirectory("%b\Macros");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);\Data");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);");
+    RemoveDirectory("%b\Uninstall");
+
+Return;

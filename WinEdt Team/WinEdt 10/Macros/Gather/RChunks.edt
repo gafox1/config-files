@@ -1,0 +1,23 @@
+// RChunks.edt
+// ======================
+// Parse %!? for the Label
+// =================================
+
+    PushTagsandRegisters;
+
+    LetReg(0,"%!?");
+    FindInString("%!0","label@{ }=@{ }\(*\)@{ }{,|\>}",1,2,11);
+    IfOK(!`IfStr('%#0','','=',>
+      !'LetReg(-10,"(untitled)");PopTagsandRegisters;Exit;',>
+      !'LetReg(-10,"%#0");PopTagsandRegisters;Exit;');`);
+    FindInString("%!0","\<\<@{ }\(*\)@{ }{,|\>}",1,2,11);
+    IfOK(!`IfStr('%#0','','=',>
+      !'LetReg(-10,"(untitled)");PopTagsandRegisters;Exit;',>
+      !'LetReg(0,"%#0");FindInString("%!0","=",1,2);>
+        IfOK(!|LetReg(-10,"(untitled)");PopTagsandRegisters;Exit;|,>
+             !|LetReg(-10,"%#0");PopTagsandRegisters;Exit;|);');`);
+    LetReg(-10,"");
+
+    PopTagsandRegisters;
+
+End;

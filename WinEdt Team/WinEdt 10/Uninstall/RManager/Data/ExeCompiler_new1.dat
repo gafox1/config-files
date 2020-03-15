@@ -1,0 +1,3 @@
+  IfStr('%!7',!'chm',!'=',!'JMP(!"CHM_Preview");');
+  IfStr('%!9',!'Rscript',!'=',!'JMP(!"R_Preview");');
+  Prompt('No Viewer for ".%!7" files is currently defined!');

@@ -1,0 +1,24 @@
+  // Prompt("%$('NSIS-Root'); %$('NSIS-Exe');");  // Debugging
+
+  // Detect R in Windows Registry (if installed)!
+  LetReg(0,`%@('HKLM','SOFTWARE\R-Core\R','   ');`);
+  IfStr('%!0','','=',>
+    !|LetReg(0,`%@('HKLM','SOFTWARE\Wow6432Node\R-Core\R','   ');`);>
+      LetReg(1,`%@('HKLM','SOFTWARE\Wow6432Node\R-Core\R\%!0','InstallPath');`);|,>
+    !|LetReg(1,`%@('HKLM','SOFTWARE\R-Core\R\%!0','InstallPath');`);|);
+  IfWin64(!"SearchForFile(2,'Rscript.exe','%!1\bin\x64');>
+            IfOK(!'Relax;',>
+                 !'SearchForFile(2,`Rscript.exe`,`%!1\bin\i386`);>
+                   IfOK(!`Relax;`,!`LetReg(2,|%!1\bin\Rscript.exe|);`);');",>
+          !"SearchForFile(2,'Rscript.exe','%!1\bin\i386');>
+            IfOK(!'Relax;',!'LetReg(2,|%!1\bin\Rscript.exe|);');");
+  SearchForFile(3,'Sweave.sty','%!1\share\texmf\tex\latex');
+  IfOK(!'Assign("R-Sweave","%!1\share\texmf\tex\latex");',>
+       !'Assign("R-Sweave","%!1\share\texmf");');
+  GetFilePath("%!2",0);
+  LetReg(1,'"%!2"');
+  Assign("R-Bin","%!0");
+  Assign("R-Exe","%!1");
+  // Prompt("%$('R-Bin'); %$('R-Exe'); %$('R-Sweave');");  // Debugging
+
+// ==================================================================

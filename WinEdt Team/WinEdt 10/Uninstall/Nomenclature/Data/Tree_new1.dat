@@ -1,0 +1,41 @@
+END="Glossary-TeX"
+
+BRANCH="Nomenclature-TeX"
+  BRANCH_CAPTION="Nomenclature  (#)"
+  // Change Mode from TeX to ? to disable this item
+  BRANCH_MODE_FILTER="TeX|DTX;INS;STY;AUX"
+  BRANCH_ICON="Thesaurus"
+  BRANCH_SORTED=1
+  BRANCH_CASE_SENSITIVE=1
+  BRANCH_IGNORE_COMMENTS=1
+  BRANCH_IGNORE_VERBATIM=1
+  BRANCH_EXPANDED=0
+  BRANCH_BEFORE_BUILD_MACRO="SaveSort;SetSort(1,1,1,-1,1,1);"
+  BRANCH_AFTER_BUILD_MACRO="RestoreSort;"
+  ITEM="\nomenclature{?}"
+    ALT="\nomenclature[?]{?}"
+    MODE_FILTER="TeX"
+    CASE_SENSITIVE=1
+    BEGINNING_OF_LINE_ONLY=1
+    CURRENT_DOCUMENT_ONLY=1
+    ALL_OPENED_DOCUMENTS=1
+    COMPLETE_PROJECT_TREE=1
+    RETURN_AT_EOF=0
+    ICON="FlagPurple"
+    LEVEL=0
+    CAPTION="%?"
+    BALANCED="{}\"
+    MAX_LINE_SPAN=8
+    ON_CLICK_MACRO="GlobalMark(1);TreeTrack(2,1);"
+    ON_DBL_CLICK_MACRO="GlobalReturn;BeginGroup;SetSel(0);Ins('%?');EndGroup;"
+    ON_ICON_CLICK_MACRO="ActivateChild;BeginGroup;SetSel(0);Ins('%?');EndGroup;"
+    ACTION="Find"
+      IMAGE="Find"
+      MACRO="GlobalMark(1);TreeTrack(2);"
+    ACTION="Insert"
+      IMAGE="Insert"
+      MACRO="ActivateChild;BeginGroup;SetSel(0);Ins('%?');EndGroup;"
+  END="\nomenclature{?}"
+END="Nomenclature-TeX"
+
+BRANCH="Labels-TeX"

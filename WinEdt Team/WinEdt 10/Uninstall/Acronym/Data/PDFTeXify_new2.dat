@@ -1,0 +1,8 @@
+      IfFileExists("%O\%N.idx",!"DeleteFile('%O\%N.idx');");>
+      IfFileExists("%O\%N.acr",!"DeleteFile('%O\%N.acr');");>
+      IfFileExists("%O\%N.acn",!"DeleteFile('%O\%N.acn');");>
+      IfFileExists("%O\%N.sls",!"DeleteFile('%O\%N.sls');");>
+      IfFileExists("%O\%N.slo",!"DeleteFile('%O\%N.slo');");>
+      IfFileExists("%O\%N.gls-abr",!"DeleteFile('%O\%N.gls-abr');");>
+      IfFileExists("%O\%N.glo-abr",!"DeleteFile('%O\%N.glo-abr');");>
+      IfFileExists("%O\%N.gls",!"DeleteFile('%O\%N.gls');");>

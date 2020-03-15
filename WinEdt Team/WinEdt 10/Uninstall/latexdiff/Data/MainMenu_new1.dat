@@ -1,0 +1,23 @@
+    SHORTCUT="24690::Shift+Ctrl+F3"
+    REQ_DOCUMENT=1
+  ITEM="-"
+  ITEM="latexdiff"
+    CAPTION="latex&diff"
+    CONFIG_FILTER="Default;MiKTeX;TeX Live"
+    IMAGE="CompareDocs"
+    SAVE_INPUT=1
+    MACRO="Exe('%b\Menus\Search\latexdiff.edt');"
+    SHORTCUT="49220::Ctrl+Alt+D"
+    REQ_FILTER=`"%!m=TeX"`+
+               `|"%!m=TeX:INS"|"%!m=TeX:DTX"|"%!m=TeX:STY"|"%!m=TeX:AUX"`
+  ITEM="latexrevise"
+    CAPTION="latex&revise"
+    CONFIG_FILTER="Default;MiKTeX;TeX Live"
+    IMAGE="Check"
+    SAVE_INPUT=1
+    MACRO="Exe('%b\Menus\Search\latexrevise.edt');"
+    SHORTCUT="49234::Ctrl+Alt+R"
+    REQ_FILTER=`"%!m=TeX"`+
+               `|"%!m=TeX:INS"|"%!m=TeX:DTX"|"%!m=TeX:STY"|"%!m=TeX:AUX"`
+  ITEM="-"
+  ITEM="Go_To_Line"

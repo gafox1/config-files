@@ -1,0 +1,5 @@
+  IfFileExists("%O\%N.ilg",!"DeleteFile('%O\%N.ilg');");
+  IfFileExists("%O\%N.alg",!"DeleteFile('%O\%N.alg');");
+  IfFileExists("%O\%N.slg",!"DeleteFile('%O\%N.slg');");
+  IfFileExists("%O\%N.glg-abr",!"DeleteFile('%O\%N.glg-abr');");
+  IfFileExists("%O\%N.glg",!"DeleteFile('%O\%N.glg');");

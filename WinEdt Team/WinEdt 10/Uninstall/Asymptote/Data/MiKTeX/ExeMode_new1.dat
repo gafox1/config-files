@@ -1,0 +1,28 @@
+    Assign(!"MetaPost-Pause", !|1|);
+
+// Asymptote
+    Assign(!"Asymptote-Executable", !|asy.exe|);
+    Release(!"Asymptote-Switches");
+    Assign(!"Asymptote-Parameters", !|%N-*.asy|);
+    Release(!"Asymptote-Paper_Size");
+    Release(!"Asymptote-Paper_Custom_Size");
+    Release(!"Asymptote-Landscape");
+    Release(!"Asymptote-GUI");
+    Release(!"Asymptote-High_Priority");
+    Assign(!"Asymptote-Wait", !|1|);
+    Release(!"Asymptote-Report");
+    Release(!"Asymptote-Errors");
+    Release(!"Asymptote-Warnings");
+    Assign(!"Asymptote-ExitCode", !|1|);
+    Release(!"Asymptote-Viewer");
+    Release(!"Asymptote-View_Search");
+    Release(!"Asymptote-STD_IO");
+    Release(!"Asymptote-No_Interaction");
+    Release(!"Asymptote-C-style-errors");
+    Release(!"Asymptote-Clean_Build");
+    Assign(!"Asymptote-WinEdt_Console", !|1|);
+    Release(!"Asymptote-Hidden_Window");
+    Release(!"Asymptote-Background_Window");
+    Assign(!"Asymptote-Pause", !|1|);
+
+// LaTeX2HTML

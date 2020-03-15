@@ -1,0 +1,8 @@
+  PushTagsandRegisters;
+  GetLine(8,%l);
+  CopyToClipboard('%!8%&10;',0);
+  PopTagsandRegisters;
+  Exe("%b\Macros\send2R.edt");
+  Wait("100");
+  SetFocus(""); // Back to WinEdt
+End;

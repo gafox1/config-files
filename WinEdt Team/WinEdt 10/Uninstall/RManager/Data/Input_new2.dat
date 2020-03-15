@@ -1,0 +1,5 @@
+  TYPE_FILTER="nsh"
+ICON="DocRnw"
+  TYPE_FILTER="rnw;snw"
+
+//  BEGINNING_OF_LINE_ONLY

@@ -1,0 +1,3 @@
+    MACRO="NewDoc('',1);"
+    SHORTCUT="24654::Shift+Ctrl+N"
+  ITEM="-"

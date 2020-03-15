@@ -1,0 +1,4 @@
+    SHORTCUT="24690::Shift+Ctrl+F3"
+    REQ_DOCUMENT=1
+  ITEM="-"
+  ITEM="Go_To_Line"

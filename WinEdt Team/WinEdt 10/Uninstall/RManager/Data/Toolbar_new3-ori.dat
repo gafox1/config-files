@@ -1,0 +1,20 @@
+  BUTTON="TeX_Live_Manager"
+    CONFIG_FILTER="TeX Live"
+  BUTTON="Knitr"
+    TYPE=6
+    MENU="Stangle"
+    MENU="Sweave"
+    MENU="-"
+    MENU="Purl"
+    MENU="Knitr"
+  BUTTON="KnitrPDFLaTeX"
+    TYPE=8
+    MENU="SweavePDFLaTeX"
+    MENU="SweaveLuaLaTeX"
+    MENU="SweaveXeLaTeX"
+    MENU="-"
+    MENU="KnitrPDFLaTeX"
+    MENU="KnitrLuaLaTeX"
+    MENU="KnitrXeLaTeX"
+
+// ===============================================================================

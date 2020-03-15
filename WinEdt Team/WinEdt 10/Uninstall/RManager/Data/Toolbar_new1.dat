@@ -1,0 +1,4 @@
+    MENU="$New_TeX_Doc"
+    MENU="$New_Rnw_Doc"
+    MENU="$New_R_Doc"
+    MENU="$New_BibTeX_Doc"

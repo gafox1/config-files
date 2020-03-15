@@ -1,0 +1,131 @@
+// -*- ASCII:EDT -*-
+// Sweave + PDFTeXify Compiler
+
+  Requires(20120413); // Requires this build of WinEdt to work properly
+
+  IfConsoleRunning("Relax;","JMP('not_Running');");
+  ShowConsole(1);
+  Prompt("Another Application is already running in WinEdt's Console.>
+ Terminate the application or wait for the execution to finish!");
+  FocusConsole(1);
+  Exit;
+
+:not_Running:: ======================================================
+  PushTagsandRegisters;
+  Assign('Main_File','%!F');
+  Assign('Current_File','%f');
+
+  Assign('Compile-Flag','');
+  SetOK(1);  // Just in case ...
+  SetErrorFlag(0);
+  SetExitHandler('Exit_Handler');
+  JMP('Start');
+
+:Exit_Handler:: =====================================================
+// Restore the Execution Modes even if execution
+// is canceled or goes badly wrong for some reason ...
+  Assign('Compile-Flag'); // Not inside a (multiple conversion) compile...
+  SetMainFile('%$(|Main_File|);');
+  Exe("%b\Exec\%$(|Exec-Dir|);\ExeMode.edt");
+  PopTagsandRegisters;
+  SetExitHandler;
+Return;
+
+:Start:: ============================================================
+  IfFileExists('%P\%N-concordance.tex',!'DeleteFile("%P\%N-concordance.tex");');
+
+  // Sweave
+  Assign('ExitCode-OK','0'); // OK Exit Code
+  LetReg(9,'Rscript');  // Execution Modes Compiler
+  LetReg(8,'');         // Log File (or empty)
+  LetReg(7,'tex');      // Output Format
+  LetReg(6,'%P');       // Startup Folder
+
+  // Display a Dialog for Extra Switches:
+  IfStr("%$('%!9-GUI');","1","=",>
+    !|GetString("Switches: ","%!9 Switches","%$('%!9--Switches');");>
+      IfOK(!`Assign('%!9--Switches','%!?');`,!`Exit;`);|,>
+    !|Release('%!9--Switches');|);
+  // Build the Command Line ...
+  LetReg(5, `%$('%!9-Executable'); %$('%!9-Switches'); %$('%!9--Switches'); "%b\Exec\R\Sweave.R" %$('%!9-Parameters');`);
+
+  IfFileExists('%P\%N.%!7',!'CloseFile("%P\%N.%!7");');
+
+  // Use Execution Modes to determine the flow of execution...
+  IfStr("%$('%!9-WinEdt_Console');","1","<>",>
+    !|Assign("%!9-Hidden_Window","1");>
+      Assign("%!9-STD_IO","1");|);
+  Assign("%!9-Viewer");
+  Exe('%b\Exec\ExeCompiler.edt');
+
+  IfStr("%$('%!9-WinEdt_Console');","1","=",>
+    !|GetConsoleText(3);|,!|ReadFile("%b\_Run.log",3);|);
+  FindInString("%!3", "You can now *latex",-11,-11,1);
+  IfOK(!"Relax;",!"Exit;");
+
+  Open('%P\%N.tex');
+  SetMainFile('%P\%N.tex');
+
+  // PDFTeXify
+  Assign("PDFTeXify-Viewer");
+  Assign("PDFTeXify-Errors");
+  Assign("PDFTeXify-Warnings");
+  Assign("PDFTeXify-No_Interaction","1");
+  Exe('%b\Exec\TeX\PDFTeXify.edt');
+
+  SetMainFile('%$(|Main_File|);');
+  IfStr('%$(|Current_File|);','%P\%N.tex','<>',>
+    !'CloseFile("%P\%N.tex");Open("%$(|Current_File|);");');
+
+  IfFileExists('%P\%N.pdf',!'Relax;',!'JMP(!"Exit");');
+  IfFileExists('%P\%N%$(|PDF-SyncEx|);',!'Relax;',!'JMP(!"View");');
+  IfFileExists('%P\%N-concordance.tex',!'Relax;',!'JMP(!"View");');
+
+  // Patch synctex file
+  IfStr(`%O`,`%P`,`<>`,>
+    !`IfFileExists('%E',>
+        !'CopyFile("%E","%P\%N.log",1);');`);
+  LetReg(5, `%$('Rscript-Executable'); "%b\Exec\R\PatchSynctex.R" "%N.synctex"`);
+  TrimCommandLine(@@'%!5',5);
+
+  WinExe('','%!5','%P','',11110,0,'','%b\_Out.log','%b\_Err.log',111);
+
+  LetReg(0);
+  IfFileExists('%b\_Err.log',!"ReadFile('%b\_Err.log',0);");
+  IfStr('%!0','','<>',>
+    !"Prompt('Patching synctex file failed!%\%\Error message:%\%!0',3,1);");
+  IfFileExists('%b\_Err.log',!"DeleteFile('%b\_Err.log');");
+  IfFileExists('%b\_Out.log',!"DeleteFile('%b\_Out.log');");
+  IfStr(`%O`,`%P`,`<>`,>
+    !`IfFileExists('%P\%N.log',>
+        !'CopyFile("%P\%N.log","%E",1);DeleteFile("%P\%N.log");');`);
+
+:View:: =============================================================
+  ErrorLogUpdate;
+
+  IfStr("%$('PDFTeXify-Errors');","1","=",>
+    !|IfLogErrors(!'FindError(0,1,0,-1,2);JMP(!"Exit");',!'Relax;',0,-1,2);|);
+  IfStr("%$('PDFTeXify-Warnings');","1","=",>
+    !|IfLogErrors(!'ShowErrorLog(1);',!'ShowErrorLog(-1);',0,-1,0);|);
+
+  // Option 1: exit when errors occur:
+  IfLogErrors(!'JMP(!"Exit");',!'Relax;',0,-1,2);
+  // Option 2: don't exit when errors occur: comment the above line
+  // Option 3: don't exit when errors occur and jump to the first error:
+  // comment the above line and uncomment the one below
+  // IfLogErrors(!'FindError(0,1,0,-1,2);',!'Relax;',0,-1,2);
+
+  IfStr("%$('PDFTeXify-Viewer');","1","=",>
+   !|Relax;|,!|JMP(!"Exit");|);
+  IfStr("%$('PDFTeXify-View_Search');","1","=",>
+   !|Exe('%b\Exec\PDF\PDF Search.edt');|,>
+   !|Exe('%b\Exec\PDF\PDF Preview.edt');|);
+
+:Exit:: =============================================================
+  SetExitHandler;
+  PopTagsandRegisters;
+  // Restore the execution modes ...
+  Exe("%b\Exec\%$(|Exec-Dir|);\ExeMode.edt");
+  Assign('Compile-Flag','');
+
+End;

@@ -1,0 +1,3 @@
+  CopyToClipboard('savehistory(); file.show( paste(getwd(), "\\.Rhistory", sep="") )%&10;',0);
+  Exe("%b\Macros\send2R.edt");
+End;

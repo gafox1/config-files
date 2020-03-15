@@ -1,0 +1,298 @@
+// -*- ASCII:EDT -*-
+
+    Prompt("This macro will uninstall RManager package...%\>
+It is recommended that you close all files (or project) to make it faster.%\%\>
+                            Continue?",1,0);
+
+    Assign("Package","RManager");
+
+    PushTagsandRegisters;
+
+    StartWorking('Uninstalling...');
+    ProcessMessages;
+
+    ShowConsole(1,1);
+    ResetConsole;
+    SetConsoleText("Uninstalling...%\%\",1);
+    Call('Uninstall_Start');
+    Call('Uninstall_Task');
+    SetConsoleText("%\Done...%\",1,1);
+
+    PopTagsandRegisters;
+
+    StopWorking;
+
+    Prompt("Uninstallation Complete! See the Console for uninstall info.",0,1);
+
+    Release("Filename");
+    Release("Filetype");
+    Release("Folder");
+    Release("Package");
+
+Exit;
+
+:Uninstall_Start:: ==================================================
+
+    // Delete files
+    Assign("Filetype",".ini");
+
+      Assign("Folder","ConfigEx");
+      Assign("Filename","FilterSets-RManager");
+      Call('File_Delete');
+      Assign("Filename","IgnoredText-RManager");
+      Call('File_Delete');
+      Assign("Filename","Keywords-RManager");
+      Call('File_Delete');
+      Assign("Filename","MainMenu-RManager");
+      Call('File_Delete');
+      Assign("Filename","Switches-RManager");
+      Call('File_Delete');
+      Assign("Filename","Tree-RManager");
+      Call('File_Delete');
+
+    Assign("Filetype",".edt");
+
+      Assign("Folder","Macros");
+      Assign("Filename","send2R");
+      Call('File_Delete');
+
+      Assign("Folder","Macros\Gather");
+      Assign("Filename","RChunks");
+      Call('File_Delete');
+
+      Assign("Folder","Macros\R");
+      Assign("Filename","Chunk");
+      Call('File_Delete');
+      Assign("Filename","for");
+      Call('File_Delete');
+      Assign("Filename","function");
+      Call('File_Delete');
+      Assign("Filename","if");
+      Call('File_Delete');
+      Assign("Filename","if_else");
+      Call('File_Delete');
+      Assign("Filename","R-history");
+      Call('File_Delete');
+      Assign("Filename","R-line");
+      Call('File_Delete');
+      Assign("Filename","R-line-go");
+      Call('File_Delete');
+      Assign("Filename","R-paste");
+      Call('File_Delete');
+      Assign("Filename","R-paste-go");
+      Call('File_Delete');
+      Assign("Filename","R-script-go");
+      Call('File_Delete');
+      Assign("Filename","R-script");
+      Call('File_Delete');
+      Assign("Filename","send2R--mdi");
+      Call('File_Delete');
+      Assign("Filename","send2R--sdi");
+      Call('File_Delete');
+      Assign("Filename","send2S");
+      Call('File_Delete');
+
+      Assign("Folder","Exec\R");
+      Assign("Filename","ChooseWeave");
+      Call('File_Delete');
+      Assign("Filename","Compile");
+      Call('File_Delete');
+      Assign("Filename","Knitr");
+      Call('File_Delete');
+      Assign("Filename","KnitrPDFTeXify");
+      Call('File_Delete');
+      Assign("Filename","Purl");
+      Call('File_Delete');
+      Assign("Filename","Stangle");
+      Call('File_Delete');
+      Assign("Filename","Sweave");
+      Call('File_Delete');
+      Assign("Filename","SweavePDFTeXify");
+      Call('File_Delete');
+
+    Assign("Filetype",".R");
+
+      Assign("Folder","Exec\R");
+      Assign("Filename","Knitr");
+      Call('File_Delete');
+      Assign("Filename","PatchSynctex");
+      Call('File_Delete');
+      Assign("Filename","Purl");
+      Call('File_Delete');
+      Assign("Filename","Stangle");
+      Call('File_Delete');
+      Assign("Filename","Sweave");
+      Call('File_Delete');
+
+    // Update config files
+    Assign("Filetype",".ini");
+
+      Assign("Folder","ConfigEx");
+      Assign("Filename","DocList");
+      Call('File_Update');
+      Assign("Filename","Errors");
+      Call('File_Update');
+      Assign("Filename","FilterSets");
+      Call('File_Include');
+      Assign("Filename","IgnoredText");
+      Call('File_Include');
+      Assign("Filename","Input");
+      Call('File_Update');
+      Assign("Filename","Keywords");
+      Call('File_Include');
+      Assign("Filename","MainMenu");
+      Call('File_Include');
+      Call('File_Update');
+      Assign("Filename","Modes");
+      Call('File_Update');
+      Assign("Filename","Switches");
+      Call('File_Include');
+      Assign("Filename","Toolbar");
+      Call('File_Update');
+      Assign("Filename","Tree");
+      Call('File_Include');
+
+    Assign("Filetype",".edt");
+
+      Assign("Folder","Config");
+      Assign("Filename","Startup");
+      Call('File_Update');
+
+      Assign("Folder","Exec\MiKTeX");
+      Assign("Filename","ExecModes");
+      Call('File_Update');
+
+      Assign("Folder","Exec\TeX Live");
+      Assign("Filename","ExecModes");
+      Call('File_Update');
+
+      Assign("Folder","Exec");
+      Assign("Filename","Compile");
+      Call('File_Update');
+      Assign("Filename","ExeCompiler");
+      Call('File_Update');
+      Assign("Filename","MiKTeX\ExeMode_Default");
+      Call('File_Update');
+      Assign("Filename","TeX Live\ExeMode_Default");
+      Call('File_Update');
+
+    // Reload personal settings
+    IfFileExists("%b\ConfigEx\UserPreferences.ini",!'LoadConfig("%b\ConfigEx\UserPreferences.ini");');
+    IfFileExists("%b\ConfigEx\Private.ini",!'LoadConfig("%b\ConfigEx\Private.ini");');
+
+    // Extra Task
+    IfFileExists("%b\Exec\R\Weave.mui",!'DeleteFile("%b\Exec\R\Weave.mui");');
+    IfFileExists("%b\Exec\MiKTeX\ExeMode.edt",>
+      !'ReadFile("%b\Exec\MiKTeX\ExeMode.edt",0);>
+        SubstituteInString("%!0",>
+          "/"+"/ Rscript>**/"+"/ MetaFont>","/"+"/ MetaFont>",11);>
+        WriteFile("%b\Exec\MiKTeX\ExeMode.edt","%!0");');
+    IfFileExists("%b\Exec\TeX Live\ExeMode.edt",>
+      !'ReadFile("%b\Exec\TeX Live\ExeMode.edt",0);>
+        SubstituteInString("%!0",>
+          "/"+"/ Rscript>**/"+"/ MetaFont>","/"+"/ MetaFont>",11);>
+        WriteFile("%b\Exec\TeX Live\ExeMode.edt","%!0");');
+    Exe('%b\Exec\Config.edt');
+    Exe('%b\Config\Startup.edt');
+
+Return;
+
+:File_Delete:: ======================================================
+
+    IfFileExists('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);',!'Relax;',>
+      !'SetConsoleText("WARNING: >
+File %$(|Filename|);%$(|Filetype|); not found in %$(|Folder|);.%\",1,1);Return;');
+    DeleteFile('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);');
+    IfOK(!'SetConsoleText("OK:      >
+File %$(|Filename|);%$(|Filetype|); deleted from %$(|Folder|);.%\",1,1);',>
+         !'SetConsoleText("ERROR:   >
+File %$(|Filename|);%$(|Filetype|); not deleted from %$(|Folder|);!!!%\",1,1);');
+
+Return;
+
+:File_Include:: =====================================================
+
+    IfFileExists('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);',!'Relax;',>
+      !'SetConsoleText("WARNING: >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not found.%\",1,1);Return;');
+    ReadFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);",0);
+    ReadFile("%C\Data\%$(|Filename|);_add.dat",1);
+    FindInString("%!0","%$(|Filename|);-%$(|Package|);.ini",-1,-1);
+    IfOK(!'SubstituteInString("%!0","%!1%\","");>
+           IfOK(!`SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); successfully restored.%\",1,1);`,>
+                !`SetConsoleText("ERROR:   >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not restored!!!%\",1,1);`);',>
+         !'SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not modified (already OK).%\",1,1);');
+    WriteFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);","%!0");
+    LoadConfig("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);");
+
+Return;
+
+:File_Update:: ======================================================
+
+    IfFileExists('%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);',!'Relax;',>
+      !'SetConsoleText("WARNING: >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not found.%\",1,1);Return;');
+    ReadFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);",0);
+    LetRegNum(7,1);
+    Loop(!`>
+      IfFileExists('%C\Data\%$(|Filename|);_new%!7.dat',>
+        !|Call('Update_Substitute');LetRegNum(7,%!7+1);|,>
+        !|Stop;|);`);
+    WriteFile("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);","%!0");
+    IfStr('%$(|Filetype|);','.ini','=',>
+      !'LoadConfig("%b\%$(|Folder|);\%$(|Filename|);%$(|Filetype|);");');
+
+Return;
+
+:Update_Substitute:: ================================================
+
+    ReadFile("%C\Data\%$(|Filename|);_old%!7.dat",1);
+    ReadFile("%C\Data\%$(|Filename|);_new%!7.dat",2);
+    SubstituteInString("%!0","%!2","%!1");
+    IfOK(!'SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); successfully restored.%\",1,1);',>
+         !'FindInString("%!0","%!1",-1,-1,10);>
+           IfOK(!`SetConsoleText("OK:      >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not modified (already OK).%\",1,1);`,>
+                !`SetConsoleText("ERROR:   >
+File %$(|Folder|);\%$(|Filename|);%$(|Filetype|); not restored!!!%\",1,1);`);');
+
+Return;
+
+:Uninstall_Task:: ===================================================
+
+    CloseFile("%X");
+
+    // Delete uninstall files
+    ListFolderFiles(0,"%b\Uninstall\%$(|Package|);","",1,1);
+    LstEnum("%!0","%\");
+    LstGetCount(1);
+    Repeat(%!1,>
+      !`LstGetItem(2,%!c-1);>
+        DeleteFile("%b\Uninstall\%$(|Package|);\%!2");>
+        ProcessMessages;>
+       `);
+    LstRelease;
+
+    // Extra Task
+    SetFolder("%b");
+    Exe('%b\Config\Cleanup.edt');
+    RemoveDirectory("%b\Config");
+    RemoveDirectory("%b\ConfigEx");
+    RemoveDirectory("%b\Exec\R");
+    RemoveDirectory("%b\Exec\MiKTeX");
+    RemoveDirectory("%b\Exec\TeX Live");
+    RemoveDirectory("%b\Exec");
+    RemoveDirectory("%b\Macros\Gather");
+    RemoveDirectory("%b\Macros\R");
+    RemoveDirectory("%b\Macros");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);\Data\MiKTeX");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);\Data\TeX Live");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);\Data");
+    RemoveDirectory("%b\Uninstall\%$(|Package|);");
+    RemoveDirectory("%b\Uninstall");
+
+Return;

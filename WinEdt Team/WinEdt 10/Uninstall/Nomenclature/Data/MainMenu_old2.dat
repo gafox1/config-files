@@ -1,0 +1,2 @@
+    REQ_FILTER=:"%!M=TeX"*%O\%N.gls
+  ITEM="$Erase_LOF_File"

@@ -1,0 +1,2 @@
+  IfFileExists("%O\%N.glg",!"DeleteFile('%O\%N.glg');");
+  IfStr("%$('PDFTeXify-Clean_Build');","1","=",>

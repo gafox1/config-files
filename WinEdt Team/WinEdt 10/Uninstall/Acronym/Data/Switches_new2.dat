@@ -1,0 +1,5 @@
+  START1_TRIGGER="\Glsentryuservi"
+  START1_TRIGGER="\acfi"
+  START1_TRIGGER="\acsu"
+  START1_TRIGGER="\aclu"
+  START2_TRIGGER=""

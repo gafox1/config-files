@@ -1,0 +1,6 @@
+  TYPE_FILTER="ltx"
+MAIN_ICON="DocRnw"
+  TYPE_FILTER="rnw;snw"
+MAIN_ICON="DocR"
+  TYPE_FILTER="r;s"
+MAIN_ICON="FileAUX"

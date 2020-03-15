@@ -1,0 +1,6 @@
+  ENVIRONMENT="\ACR?}"
+    START="\ACR"
+    STOP="}"
+    BALANCED=1
+    SCOPE=3
+  ENVIRONMENT="\useglosentry?}"

@@ -1,0 +1,9 @@
+  BUTTON="|"
+  BUTTON="latexdiff"
+    TYPE=6
+    CONFIG_FILTER="Default;MiKTeX;TeX Live"
+    MENU="latexdiff"
+    MENU="latexrevise"
+  BUTTON="|"
+  // Inserted by latexdiff
+  BUTTON="Windows_Explorer"

@@ -1,0 +1,8 @@
+  TYPE_FILTER="ltx"
+TYPE="RNW"
+  IMAGE="DocRnw"
+  TYPE_FILTER="rnw;snw"
+TYPE="R"
+  IMAGE="DocR"
+  TYPE_FILTER="r;s"
+TYPE="AUX"

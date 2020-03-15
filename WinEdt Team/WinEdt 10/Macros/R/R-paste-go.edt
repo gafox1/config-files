@@ -1,0 +1,4 @@
+  Copy;
+  CopyToClipboard('%&10;',1);
+  Exe("%b\Macros\send2R.edt");
+End;
