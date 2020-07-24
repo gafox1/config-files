@@ -1,0 +1,1 @@
+Run('git commit -m "%F"', '%P', 0, 0, 'git', 1, 1, 1);

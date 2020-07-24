@@ -71,9 +71,6 @@ Return;
   // Clean the files
   IfFileExists("%O\%N.blg",!"DeleteFile('%O\%N.blg');");
   IfFileExists("%O\%N.ilg",!"DeleteFile('%O\%N.ilg');");
-  IfFileExists("%O\%N.alg",!"DeleteFile('%O\%N.alg');");
-  IfFileExists("%O\%N.slg",!"DeleteFile('%O\%N.slg');");
-  IfFileExists("%O\%N.glg-abr",!"DeleteFile('%O\%N.glg-abr');");
   IfFileExists("%O\%N.glg",!"DeleteFile('%O\%N.glg');");
   IfFileExists("%O\%N.nlg",!"DeleteFile('%O\%N.nlg');");
   IfStr("%$('%!9-Clean_Build');","1","=",>
@@ -82,12 +79,6 @@ Return;
       IfFileExists("%O\%N.run.xml",!"DeleteFile('%O\%N.run.xml');");>
       IfFileExists("%O\%N.ind",!"DeleteFile('%O\%N.ind');");>
       IfFileExists("%O\%N.idx",!"DeleteFile('%O\%N.idx');");>
-      IfFileExists("%O\%N.acr",!"DeleteFile('%O\%N.acr');");>
-      IfFileExists("%O\%N.acn",!"DeleteFile('%O\%N.acn');");>
-      IfFileExists("%O\%N.sls",!"DeleteFile('%O\%N.sls');");>
-      IfFileExists("%O\%N.slo",!"DeleteFile('%O\%N.slo');");>
-      IfFileExists("%O\%N.gls-abr",!"DeleteFile('%O\%N.gls-abr');");>
-      IfFileExists("%O\%N.glo-abr",!"DeleteFile('%O\%N.glo-abr');");>
       IfFileExists("%O\%N.gls",!"DeleteFile('%O\%N.gls');");>
       IfFileExists("%O\%N.glo",!"DeleteFile('%O\%N.glo');");>
       IfFileExists("%O\%N.nls",!"DeleteFile('%O\%N.nls');");>

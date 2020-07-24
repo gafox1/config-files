@@ -1,0 +1,47 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "editor.fontSize": 18,
+    "files.associations": {
+        "*.rmd": "markdown"
+    },
+    "window.zoomLevel": 0,
+    "latex-workshop.latex.bibDirs": [
+        "C:/Users/gafox/Documents/Bibliog"
+    ],
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+                {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2pdf"
+            ]
+        }
+    ]
+}

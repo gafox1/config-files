@@ -26,15 +26,6 @@
     AddFileItem(1,"IDX Files","*.idx","TeX");
     AddFileItem(1,"IND Files","*.ind","TeX");
     AddFileItem(1,"ILG Files","*.ilg","TeX");
-    AddFileItem(1,"ACN Files","*.acn","TeX");
-    AddFileItem(1,"ACR Files","*.acr","TeX");
-    AddFileItem(1,"ALG Files","*.alg","TeX");
-    AddFileItem(1,"SLO Files","*.slo","TeX");
-    AddFileItem(1,"SLS Files","*.sls","TeX");
-    AddFileItem(1,"SLG Files","*.slg","TeX");
-    AddFileItem(1,"GLO-ABR Files","*.glo-abr","TeX");
-    AddFileItem(1,"GLS-ABR Files","*.gls-abr","TeX");
-    AddFileItem(1,"GLG-ABR Files","*.glg-abr","TeX");
     AddFileItem(1,"GLO Files","*.glo","TeX");
     AddFileItem(1,"GLS Files","*.gls","TeX");
     AddFileItem(1,"GLG Files","*.glg","TeX");

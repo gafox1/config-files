@@ -1,2 +1,0 @@
-  IfFileExists("%O\%N.ilg",!"DeleteFile('%O\%N.ilg');");
-  IfFileExists("%O\%N.glg",!"DeleteFile('%O\%N.glg');");

@@ -1,0 +1,1 @@
+Run('git push origin master','%P', 0, 0, 'git', 1, 1, 1);

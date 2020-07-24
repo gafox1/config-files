@@ -8983,18 +8983,6 @@ Exe('%b\Exec\TeX\ConTeXt.edt');
 
 3
 0
-FixBib
-FixBib
-FileBIB
-
-0
-1
-
-
-Exe('%b\Contrib\FixBib\FixBib.edt');
-0
-
-0
 Biber
 Biber
 Biber
@@ -9138,18 +9126,6 @@ MetaPost
 
 Exe('%b\Exec\TeX\MetaPost.edt');
 24653
-
-0
-Asymptote
-&Asymptote
-Asymptote
-
-0
-0
-%O\%N-1.asy*"%!M=TeX"?"%F==%P\%N.asy"|"%!M=TeX:INS"|"%!M=TeX:DTX"|"%!M=TeX:STY"|"%!M=TeX:AUX"
-
-Exe('%b\Exec\TeX\Asymptote.edt');
-24665
 
 3
 1
@@ -10302,7 +10278,7 @@ Exe('%b\ContribManager\CheckAllUpdates.edt');
 1
 Acronym>
 Acronym
-Check
+
 
 0
 0
@@ -10554,7 +10530,7 @@ Assign('Package','arara');Exe('%b\ContribManager\CheckUpdates.edt');Release('Pac
 1
 Asymptote>
 Asymptote
-Check
+
 
 0
 0
@@ -18093,7 +18069,7 @@ if_else
 Insert_Chunk
 
 Toolbar_TeX2
-47
+45
 0
 0
 0
@@ -18344,15 +18320,6 @@ TeXify2PDF
 
 
 0
-FixBib
-
-0
-0
-0
-
-
-
-0
 Biber
 
 0
@@ -18408,15 +18375,6 @@ MetaFont
 
 0
 MetaPost
-
-0
-0
-0
-
-
-
-0
-Asymptote
 
 0
 0
@@ -18556,7 +18514,7 @@ Sweave
 -
 Purl
 Knitr
-KnitrPDFLaTeXify
+KnitrPDFLaTeX
 
 8
 0
@@ -27755,7 +27713,7 @@ TeX|DTX;INS;STY;AUX
 0
 0
 0
-84
+59
 \glsdisp
 \glsadd
 \glssee
@@ -27807,37 +27765,12 @@ TeX|DTX;INS;STY;AUX
 \acrshort
 \Acrshort
 \ACRshort
-\acrshortpl
-\Acrshortpl
-\ACRshortpl
 \acrlong
 \Acrlong
 \ACRlong
-\acrlongpl
-\Acrlongpl
-\ACRlongpl
 \acrfull
 \Acrfull
 \ACRfull
-\acrfullpl
-\Acrfullpl
-\ACRfullpl
-\ac
-\Ac
-\acp
-\Acp
-\acf
-\Acf
-\acs
-\Acs
-\acl
-\Acl
-\acfp
-\Acfp
-\acsp
-\Acsp
-\aclp
-\Aclp
 \useglosentry
 \useGlosentry
 0
@@ -28271,7 +28204,7 @@ TeX|DTX;INS;STY;AUX
 0
 0
 0
-36
+33
 \Glsentryname
 \glossentryname
 \Glossentryname
@@ -28305,9 +28238,6 @@ TeX|DTX;INS;STY;AUX
 \Glsentryuserv
 \glsentryuservi
 \Glsentryuservi
-\acfi
-\acsu
-\aclu
 0
 0
 0
@@ -38526,12 +38456,6 @@ longprovideglossaryentry
 newterm
 newabbreviation
 storeglosentry
-acro
-newacro
-acrodef
-acroplural
-newacroplural
-acrodefplural
 newacronym
 nomenclature
 glslink
@@ -38588,40 +38512,12 @@ GLSuservi
 acrshort
 Acrshort
 ACRshort
-acrshortpl
-Acrshortpl
-ACRshortpl
 acrlong
 Acrlong
 ACRlong
-acrlongpl
-Acrlongpl
-ACRlongpl
 acrfull
 Acrfull
 ACRfull
-acrfullpl
-Acrfullpl
-ACRfullpl
-ac
-Ac
-acp
-Acp
-acf
-Acf
-acs
-Acs
-acl
-Acl
-acfp
-Acfp
-acsp
-Acsp
-aclp
-Aclp
-acfi
-acsu
-aclu
 useglosentry
 useGlosentry
 glsentryname
@@ -48406,7 +48302,7 @@ TeX
 .@\:/*+?!0123456789
 1
 \-
-141
+129
 \\
 \\
 
@@ -48657,102 +48553,6 @@ $
 0
 \ACR?}
 \ACR
-}
-3
-0
-0
-1
-0
-\ac{?}
-\ac{
-}
-3
-0
-0
-1
-0
-\ac[?}
-\ac[
-}
-3
-0
-0
-1
-0
-\Ac{?}
-\Ac{
-}
-3
-0
-0
-1
-0
-\Ac[?}
-\Ac[
-}
-3
-0
-0
-1
-0
-\acp?}
-\acp
-}
-3
-0
-0
-1
-0
-\Acp?}
-\Acp
-}
-3
-0
-0
-1
-0
-\acf?}
-\acf
-}
-3
-0
-0
-1
-0
-\Acf?}
-\Acf
-}
-3
-0
-0
-1
-0
-\acs?}
-\acs
-}
-3
-0
-0
-1
-0
-\Acs?}
-\Acs
-}
-3
-0
-0
-1
-0
-\acl?}
-\acl
-}
-3
-0
-0
-1
-0
-\Acl?}
-\Acl
 }
 3
 0
@@ -50552,7 +50352,7 @@ et cetera
 
 *
 23
-175
+127
 \\
 
 0
@@ -51190,7 +50990,7 @@ TeX|DTX;INS;STY;AUX
 1
 TeX|DTX;INS;STY;AUX
 [Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\newacro?{}
+\newacronym?{}
 
 0
 0
@@ -51203,7 +51003,7 @@ TeX|DTX;INS;STY;AUX
 1
 TeX|DTX;INS;STY;AUX
 [Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Glos.edt');]
-\newacro?{?}
+\newacronym?{?}
 
 0
 0
@@ -51216,163 +51016,7 @@ TeX|DTX;INS;STY;AUX
 1
 TeX|DTX;INS;STY;AUX
 [Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\newacro?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\newabbreviation?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Glos.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Glos.edt');]
-\newabbreviation?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\newabbreviation?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acro{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Glos.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Glos.edt');]
-\acro{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acro{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acroplural{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Glos.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Glos.edt');]
-\acroplural{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acroplural{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acrodef?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Glos.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Glos.edt');]
-\acrodef?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acrodef?{
+\newacronym?{
 
 0
 0
@@ -51646,474 +51290,6 @@ TeX|DTX;INS;STY;AUX
 TeX|DTX;INS;STY;AUX
 [Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
 \ACR?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\ac{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\ac{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\ac{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\ac[?]{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\ac[?]{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\ac[?]{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Ac{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Ac{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Ac{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Ac[?]{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Ac[?]{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Ac[?]{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acp?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\acp?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acp?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Acp?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Acp?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Acp?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acf?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\acf?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acf?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Acf?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Acf?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Acf?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acs?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\acs?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acs?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Acs?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Acs?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Acs?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\acl?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\acl?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\acl?{
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[Relax;]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgStart.edt');GDIShow;GDISetPage('Glos');]
-\Acl?{}
-
-0
-0
-
-0
-
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\Gls.edt');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');Exe('%b\Macros\Active Strings\Gls.edt');]
-\Acl?{?}
-
-0
-0
-
-0
-
-0
-TeX|DTX;INS;STY;AUX
-[GDIShow;GDISetPage('Glos','%?');]
-1
-TeX|DTX;INS;STY;AUX
-[Exe('%b\Macros\Active Strings\ArgEnd.edt');CharLeft;GDIShow;GDISetPage('Glos','%?');]
-\Acl?{
 
 0
 0
@@ -53004,30 +52180,21 @@ Dictionary
 1
 0
 0
-0
-0
-0
 1
-0
-1
-0
-1
-0
 1
 1
 0
 0
-0
-0
-0
 1
+0
 0
 1
 1
 1
 1
 0
-1
+0
+0
 0
 1
 0
@@ -53037,34 +52204,43 @@ Dictionary
 1
 0
 1
+0
+1
+0
+1
+1
 1
 1
 0
-
+1
+1
+1
 0
 
+0
 
-wss
-pvdist
-mydata
-diff
-prevosti
-folder
-server-
-feb
-poppr
-gendatne
 
-}{
-\nomenclature{
-	\item 
-2020
-Plant ecol
-.test.MLG$
-c, 
-1c, 
-diseq.c
-.c <-
+Stiling1
+treefall
+cacto
+Out2000
+xls
+read.xl
+_2000
+a)
+c_3
+_3
+
+Dove
+.2000
+_2000)
+c_2000
+c_3)
+c)
+poly(exit,3) 
+Out2000
+O_2000-
+Bumblebee
 
 1
 0
@@ -53176,8 +52352,8 @@ TeX
 12
 14
 1
-25
-45
+29
+50
 0
 0
 0
@@ -53346,17 +52522,17 @@ bscBookmarkArrow
 *
 33
 1
-TeX;HTML;ANSI;ASCII|DTX;INS;STY;AUX;EDT;INI;TeX:RNW
+TeX;HTML;ANSI;ASCII|DTX;INS;STY;AUX;EDT;INI;RNW
 1
-TeX;HTML;ANSI;Soft|DTX;INS;STY;AUX;Hard;TeX:RNW
+TeX;HTML;ANSI;Soft|DTX;INS;STY;AUX;Hard;RNW
 1
 XS|UNIX;PC
 60
 0
 0
+0
 1
-0
-0
+1
 0
 1
 0
@@ -56976,8 +56152,8 @@ END_LIST
 Binary Files
 Binary
 1
-14
-25
+16
+30
 0
 0
 64
@@ -57007,8 +56183,8 @@ Courier New
 Macros and Configurations
 INI;EDT|XWE
 1
-14
-25
+16
+30
 0
 1
 80
@@ -57038,8 +56214,8 @@ Courier New
 HTML Documents
 HTML|HHC;XWE
 1
-8
-28
+10
+32
 0
 0
 98
@@ -57069,8 +56245,8 @@ Verdana
 XWE Documents
 XWE
 1
-14
-25
+16
+30
 0
 0
 98
@@ -57100,8 +56276,8 @@ Courier New
 ASCII Documents
 ASCII
 1
-25
-45
+29
+50
 0
 0
 68
@@ -57131,8 +56307,8 @@ Courier New
 TeX Source
 DTX;INS;STY
 1
-25
-45
+29
+50
 0
 0
 80
@@ -57181,18 +56357,6 @@ TeX
 \acr?}
 \Acr?}
 \ACR?}
-\ac{?}
-\ac[?}
-\Ac{?}
-\Ac[?}
-\acp?}
-\Acp?}
-\acf?}
-\Acf?}
-\acs?}
-\Acs?}
-\acl?}
-\Acl?}
 \useglosentry?}
 \useGlosentry?}
 \label?}
@@ -60101,16 +59265,8 @@ Insert
 Insert
 ActivateChild;BeginGroup;SetSel(0);Ins('%?');EndGroup;
 0
-9
+1
 \newacronym[?]{?}
-\newabbreviation{?}
-\newabbreviation[?]{?}
-\acro{?}
-\newacro{?}
-\acrodef{?}
-\acroplural{?}
-\newacroplural{?}
-\acrodefplural{?}
 0
 \glossary{?name={?}
 TeX
@@ -64357,16 +63513,8 @@ Insert
 Insert
 ActivateChild;BeginGroup;SetSel(0);Ins('%?');EndGroup;
 0
-9
+1
 \newacronym[?]{?}
-\newabbreviation{?}
-\newabbreviation[?]{?}
-\acro{?}
-\newacro{?}
-\acrodef{?}
-\acroplural{?}
-\newacroplural{?}
-\acrodefplural{?}
 0
 \glossary{?name={?}
 TeX
@@ -64875,7 +64023,7 @@ Find
 Find
 GDITrack;
 0
-206
+153
 \glsdisp{?}
 \glsadd{?}
 \glssee{?}
@@ -64927,40 +64075,12 @@ GDITrack;
 \acrshort{?}
 \Acrshort{?}
 \ACRshort{?}
-\acrshortpl{?}
-\Acrshortpl{?}
-\ACRshortpl{?}
 \acrlong{?}
 \Acrlong{?}
 \ACRlong{?}
-\acrlongpl{?}
-\Acrlongpl{?}
-\ACRlongpl{?}
 \acrfull{?}
 \Acrfull{?}
 \ACRfull{?}
-\acrfullpl{?}
-\Acrfullpl{?}
-\ACRfullpl{?}
-\ac{?}
-\Ac{?}
-\acp{?}
-\Acp{?}
-\acf{?}
-\Acf{?}
-\acs{?}
-\Acs{?}
-\acl{?}
-\Acl{?}
-\acfp{?}
-\Acfp{?}
-\acsp{?}
-\Acsp{?}
-\aclp{?}
-\Aclp{?}
-\acfi{?}
-\acsu{?}
-\aclu{?}
 \useglosentry{?}
 \useGlosentry{?}
 \glslink[?]{?}
@@ -65015,37 +64135,12 @@ GDITrack;
 \acrshort[?]{?}
 \Acrshort[?]{?}
 \ACRshort[?]{?}
-\acrshortpl[?]{?}
-\Acrshortpl[?]{?}
-\ACRshortpl[?]{?}
 \acrlong[?]{?}
 \Acrlong[?]{?}
 \ACRlong[?]{?}
-\acrlongpl[?]{?}
-\Acrlongpl[?]{?}
-\ACRlongpl[?]{?}
 \acrfull[?]{?}
 \Acrfull[?]{?}
 \ACRfull[?]{?}
-\acrfullpl[?]{?}
-\Acrfullpl[?]{?}
-\ACRfullpl[?]{?}
-\ac[?]{?}
-\Ac[?]{?}
-\acp[?]{?}
-\Acp[?]{?}
-\acf[?]{?}
-\Acf[?]{?}
-\acs[?]{?}
-\Acs[?]{?}
-\acl[?]{?}
-\Acl[?]{?}
-\acfp[?]{?}
-\Acfp[?]{?}
-\acsp[?]{?}
-\Acsp[?]{?}
-\aclp[?]{?}
-\Aclp[?]{?}
 \useglosentry[?]{?}
 \useGlosentry[?]{?}
 \glsentryname{?}
@@ -72922,10 +72017,10 @@ Edt
 80
 Default:MiKTeX
 1
--12
+-13
 0
 2011
-1646
+1882
 0
 0
 0
@@ -72938,16 +72033,16 @@ Default:MiKTeX
 1
 77
 1
-492
-357
-492
-357
-0
-0
+562
 408
-293
-583
-418
+562
+408
+0
+0
+466
+335
+666
+478
 0
 0
 0
@@ -72958,7 +72053,7 @@ Default:MiKTeX
 0
 0
 0
-168
+192
 2
 12
 4
@@ -72967,10 +72062,10 @@ Default:MiKTeX
 
 *
 81
-560
-560
-557
-175
+640
+640
+498
+200
 
 Tree
 1
@@ -72981,8 +72076,8 @@ Tree
 1
 0
 0
-630
-910
+720
+1040
 
 fclFormBk
 -16777211
@@ -73003,8 +72098,8 @@ Gather
 1
 0
 0
-1400
-770
+1600
+880
 
 fclFormBk
 -16777211
@@ -73025,8 +72120,8 @@ Macro Recorder
 1
 0
 0
-1400
-770
+1600
+880
 
 fclFormBk
 -16777211
@@ -73047,8 +72142,8 @@ Errors
 1
 0
 0
-1400
-770
+1600
+880
 
 fclFormBk
 -16777211
@@ -73069,8 +72164,8 @@ Character Map
 1
 0
 0
-1400
-315
+1600
+360
 
 fclFormBk
 -16777211
@@ -73091,8 +72186,8 @@ Find in Files
 1
 0
 0
-1400
-770
+1600
+880
 
 fclFormBk
 -16777211
@@ -73113,8 +72208,8 @@ Console
 1
 0
 0
-1400
-770
+1600
+880
 
 fclFormBk
 -16777211
@@ -73135,8 +72230,8 @@ Options Interface
 1
 0
 0
-630
-910
+720
+1040
 
 fclFormBk
 -16777211
@@ -73187,6 +72282,8 @@ Recorded Macro.edt
 
 *
 86
+Run('.\FixBib.py', 'C:\Users\gafox\Documents\Bibliog' );
+Run('C:\Python38\python.exe FixBib.py', 'C:\Users\gafox\Documents\Bibliog' );
 
 
 *

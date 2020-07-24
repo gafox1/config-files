@@ -1,2 +1,0 @@
-    AddFileItem(1,"ILG Files","*.ilg","TeX");
-    AddFileItem(1,"GLO Files","*.glo","TeX");

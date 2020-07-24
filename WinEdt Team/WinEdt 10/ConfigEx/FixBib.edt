@@ -1,1 +1,1 @@
-Run('C:\Python27\python.exe FixBib.py', 'C:\Users\gafox\Documents\Bibliog' );
+Run('C:\Python38\python.exe FixBib.py', 'C:\Users\gafox\Documents\Bibliog' );

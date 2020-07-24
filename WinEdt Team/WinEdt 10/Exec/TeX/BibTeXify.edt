@@ -13,7 +13,7 @@
   SetOK(1);  // Just in case ...
   SetErrorFlag(0);
 
-IfFileExists('%O\%N.aux',!'Relax;',!'JMP("Asymptote");');
+IfFileExists('%O\%N.aux',!'Relax;',!'JMP("MakeIndex");');
 
     Assign(!"Compile-Flag",!|2|); // Do not Complain ...
     Assign("BibTeX-GUI");
@@ -31,29 +31,6 @@ IfFileExists('%O\%N.aux',!'Relax;',!'JMP("Asymptote");');
     IfStr("%$('BibTeX-WinEdt_Console');","1","<>",!|Assign("BibTeX-Hidden_Window","1");|);
 
     Exe('%b\Exec\TeX\BibTeX.edt');
-
-:Asymptote:: ========================================================
-
-  SetOK(1);  // Just in case ...
-  SetErrorFlag(0);
-
-IfFileExists('%O\%N-1.asy',!'Relax;',!'JMP("MakeIndex");');
-IfNum("%$(!'TeXify-Iterations');",!"2",!"<",!|JMP("MakeIndex");|);
-
-    Assign(!"Compile-Flag",!|2|); // Do not Complain ...
-    Assign("Asymptote-GUI");
-    Assign("Asymptote-ExitCode");
-    Assign("Asymptote-Pause");
-    Assign("Asymptote-Wait","1");
-    Assign("Asymptote-High_Priority","%$('%$(`Pre-Process`);-High_Priority');");
-    Assign("Asymptote-STD_IO","%$('%$(`Pre-Process`);-STD_IO');");
-    Assign("Asymptote-WinEdt_Console","%$('%$(`Pre-Process`);-WinEdt_Console');");
-    Assign("Asymptote-Hidden_Window","%$('%$(`Pre-Process`);-Hidden_Window');");
-    Assign("Asymptote-Background_Window","%$('%$(`Pre-Process`);-Background_Window');");
-    IfStr("%$('Asymptote-WinEdt_Console');","1","<>",!|Assign("Asymptote-Hidden_Window","1");|);
-    IfStr("%$('Asymptote-WinEdt_Console');","1","=",!|Assign("Asymptote-Pause","1");|);
-
-    Exe('%b\Exec\TeX\Asymptote.edt');
 
 :MakeIndex:: ========================================================
 

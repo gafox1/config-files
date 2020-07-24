@@ -1,5 +1,0 @@
-  FindInString("%!3",!"<No file",-1,-1, 11);
-  IfOK(!"JMP(!'Again');");
-  FindInString("%!3",!"file `*' not found",-1,-1, 11);
-  IfOK(!"JMP(!'Again');");
-  FindInString("%!3",!"Rerun LaTeX",-1,-1, 0);
