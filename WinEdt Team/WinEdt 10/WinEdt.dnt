@@ -52180,30 +52180,21 @@ Dictionary
 1
 0
 0
-1
-1
-1
-0
-0
-1
-0
-0
-1
-1
-1
-1
-0
 0
 0
 0
 1
 0
 1
+0
+0
+1
 1
 1
 1
 0
-1
+0
+0
 0
 1
 0
@@ -52213,34 +52204,43 @@ Dictionary
 1
 0
 1
+0
+1
+0
+1
+1
 1
 1
 0
-
+1
+1
+1
 0
 
+0
 
-Stiling1
-treefall
-cacto
-Out2000
-xls
-read.xl
-_2000
-a)
-c_3
-_3
 
-Dove
-.2000
-_2000)
-c_2000
-c_3)
-c)
-poly(exit,3) 
-Out2000
-O_2000-
-Bumblebee
+library.bib
+Catano
+fontenc
+inputenc
+bib
+bibencoding
+biber
+usepack
+fox
+includ
+
+\done
+blue
+Purple
+RoyalBlue
+\fullcite
+} \item
+] \item
+ \item \addcite{Heterogeneity synthesis}{
+\item \addcite{Heterogeneity synthesis}{
+\subsection
 
 1
 0
@@ -72017,10 +72017,10 @@ Edt
 80
 Default:MiKTeX
 1
--13
 0
-2011
-1882
+2
+2000
+1940
 0
 0
 0
