@@ -52177,21 +52177,8 @@ Dictionary
 1
 1
 1
-1
 0
 0
-0
-0
-0
-1
-0
-1
-0
-0
-1
-1
-1
-1
 0
 0
 0
@@ -52199,11 +52186,15 @@ Dictionary
 1
 0
 1
+0
+0
+1
 1
 1
 1
 0
-1
+0
+0
 0
 1
 0
@@ -52213,23 +52204,32 @@ Dictionary
 1
 0
 1
+0
+1
+0
+1
+1
 1
 1
 0
-
+1
+1
+1
 0
 
+0
 
+
+Threshold16
+threshold
+\add
+Diagram of the
+F_
+Smadult
+repro
 library.bib
 Catano
 fontenc
-inputenc
-bib
-bibencoding
-biber
-usepack
-fox
-includ
 
 \done
 blue
@@ -72056,7 +72056,7 @@ Default:MiKTeX
 192
 2
 12
-4
+3
 1
 
 
