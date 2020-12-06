@@ -15,6 +15,7 @@
     options(repos = r)
     rm(r)
     options(help_type="html")
+ 
  }
 
 update.local <- function() {
