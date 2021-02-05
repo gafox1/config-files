@@ -11,7 +11,7 @@
 	cat(paste("\nWorking Directory is:",getwd()," --  use setwd(dir) to change it ","\n"))
 #
     r <- getOption("repos")             # hard code the US repo for CRAN
-    r["CRAN"] <- "http://cran.us.r-project.org"
+    r["CRAN"] <- "https://cran.us.r-project.org"
     options(repos = r)
     rm(r)
     options(help_type="html")
