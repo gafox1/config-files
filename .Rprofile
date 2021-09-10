@@ -38,15 +38,16 @@ Subset <- function(x, ...){
 #old <- getOption("defaultPackages");
 #options(defaultPackages = c(old, "Defaults"))
 #
-utils::assignInNamespace(
-  "q", 
-  function(save = "no", status = 0, runLast = TRUE) 
-  {
-    .Internal(quit(save, status, runLast))
-  }, 
-  "base"
-)
+#utils::assignInNamespace(
+#  "q", 
+#  function(save = "no", status = 0, runLast = TRUE) 
+#  {
+#    .Internal(quit(save, status, runLast))
+#  }, 
+#  "base"
+#)
 
+exit <- function() { q("no") }
 
 .Last <- function() {
   graphics.off()                        # a small safety measure.

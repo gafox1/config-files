@@ -1,3 +1,3 @@
 PATH="C:'Rtools/bin;${PATH}" 
-R_LIBS="C:/Users/gafox/Documents/R/win-library"
-R_PROFILE_USER = "C:/Users/gafox/Documents/.Rprofile"
+#R_LIBS="C:/Users/gafox/Documents/R/win-library"
+R_PROFILE_USER = "C:/Users/gafox/.Rprofile"
